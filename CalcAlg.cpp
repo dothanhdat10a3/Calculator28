@@ -1,4 +1,4 @@
-
+//Do Thanh Dat test commit
 namespace CalcAlg
 {
     static inline long long* castToDecimal(long long m_number, long long m_numberDecimal[], long long m_getNumberDecimal[])
@@ -46,8 +46,6 @@ namespace CalcAlg
                 m_getNumberOct += m_numberOct[i];
             }
 
-
-
     }
     static inline long long* castToHexadecimal(long long m_number, long long m_numberHex[], long long m_getNumberHex[])
     {
@@ -61,6 +59,5 @@ namespace CalcAlg
         {
             m_getNumberHex += m_numberHex[i];
         }
-
     }
 };
