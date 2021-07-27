@@ -14,7 +14,7 @@ namespace CalcAlg
         {
             m_getNumberDecimal += m_numberDecimal[i];
         }
-
+        return m_getNumberDecimal;
     }
     static inline long long* castToBinary(long long m_number, long long m_numberBin[], long long m_getNumberBin[])
     {
@@ -29,6 +29,7 @@ namespace CalcAlg
             {
                 m_getNumberBin += m_numberBin[i];
             }
+            return m_getNumberBin;
     }
     static inline long long* castToOctal(long long m_number, long long m_numberOct[], long long m_getNumberOct[])
     {
