@@ -7,7 +7,7 @@ enum INPUT_TYPE {
     BINARY = 2,
     HEXADECIMAL = 16
 };
-
+// Do Thanh Dat
 enum RADIX_TYPE{
     HEX = 16,
     OCT = 8,
