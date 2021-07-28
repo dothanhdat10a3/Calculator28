@@ -1,12 +1,17 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-
+#include "Number.cpp"
 
 int main(int argc, char *argv[])
 {
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 #endif
+
+    Number* number = new Number();
+    int ninaryNumberTest[5] = {0, 1, 0, 0, 1};
+    number->castNumberFromBinToDecimal()
+
 
     QGuiApplication app(argc, argv);
 

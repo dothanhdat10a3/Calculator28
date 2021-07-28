@@ -1,5 +1,6 @@
 #include "CalcAlg.cpp"
-
+//#include <string>
+using namespace std;
 enum INPUT_TYPE {
     DECIMAL = 10,
     OCTAL = 8,
@@ -7,12 +8,21 @@ enum INPUT_TYPE {
     HEXADECIMAL = 16
 };
 
+enum RADIX_TYPE{
+    HEX = 16,
+    OCT = 8,
+    BIN = 2,
+    DEC = 10
+};
+
 class Number
 {
+public:
     Number(){}
     ~Number(){}
 private:
     long long m_number;
+    string numberInput;
 
     long long m_numberDecimal[64] = { 0 };
     long long m_getNumberDecimal[64] = { 0 };
@@ -28,21 +38,36 @@ public:
         switch (inputType)
         {
         case DECIMAL:
-            CalcAlg::castToDecimal(m_number, m_numberDecimal, m_getNumberDecimal);
+            CalcAlg::castNumberFromDecimalToDecimal(m_number, m_numberDecimal, m_getNumberDecimal);
             break;
         case BINARY:
-            CalcAlg::castToBinary(m_number,m_numberBin, m_getNumberBin);
+            CalcAlg::castNumberFromDecimalToBinary(m_number,m_numberBin, m_getNumberBin);
             break;
         case OCTAL:
-            CalcAlg::castToOctal(m_number, m_numberOct, m_getNumberOct);
+            CalcAlg::castNumberFromDecimalToOctal(m_number, m_numberOct, m_getNumberOct);
             break;
         case HEXADECIMAL:
-            CalcAlg::castToHexadecimal(m_number, m_numberHex, m_getNumberHex);
+            CalcAlg::castNumberFromDecimalToHexadecimal(m_number, m_numberHex, m_getNumberHex);
             break;
         default:
             break;
 
 
+        }
+    }
+    void castNumberToDecimal(RADIX_TYPE radixType){
+        switch(radixType)
+        {
+        case DEC: CalcAlg::castNumberFromDecToDecimal(numberInput, m_number);
+            break;
+        case BIN: CalcAlg::castNumberFromBinToDecimal(numberInput,m_number);
+            break;
+        case OCT: CalcAlg::castNumberFromOctToDecimal(numberInput,m_number);
+            break;
+        case HEX: CalcAlg::castNumberFromHexToDecimal(numberInput,m_number);
+            break;
+        default :
+            break;
         }
     }
 
